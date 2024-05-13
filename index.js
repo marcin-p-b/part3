@@ -5,10 +5,10 @@ import morgan from "morgan";
 import cors from "cors";
 
 const app = express();
-const port = 3001;
+const port = process.env.port || 3001;
 
 app.use(express.json());
-app.use(express.static("public"));
+app.use(express.static("dist"));
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(cors());
 morgan.token("body", (req, res) => JSON.stringify(req.body));
