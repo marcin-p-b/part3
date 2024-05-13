@@ -2,6 +2,7 @@
 import express, { request } from "express";
 import bodyParser from "body-parser";
 import morgan from "morgan";
+import cors from "cors";
 
 const app = express();
 const port = 3001;
@@ -9,6 +10,7 @@ const port = 3001;
 app.use(express.json());
 app.use(express.static("public"));
 app.use(bodyParser.urlencoded({ extended: true }));
+app.use(cors());
 morgan.token("body", (req, res) => JSON.stringify(req.body));
 app.use(
   morgan(":method :url :status :res[content-length] - :response-time ms :body")
