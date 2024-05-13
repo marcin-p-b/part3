@@ -5,7 +5,7 @@ import morgan from "morgan";
 import cors from "cors";
 
 const app = express();
-const port = 3001;
+const port = process.env.port || 3001;
 
 app.use(express.json());
 app.use(express.static("public"));
