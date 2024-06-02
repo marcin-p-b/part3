@@ -163,14 +163,6 @@ app.post("/api/persons", (request, response, next) => {
     name: body.name,
     number: body.number,
   });
-  error = person.validateSync();
-  if (error !== undefined) {
-    response.status(400);
-    assert.equal(
-      error.errors["number"].message,
-      `${person.number} is not a valid phone number!`
-    );
-  }
 
   person
     .save()
