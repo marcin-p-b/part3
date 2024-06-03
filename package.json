@@ -11,13 +11,20 @@
     "build:ui": "rm -rf dist && cd ../phonebook/ && npm run build && cp -r dist ../phonebook_backend",
     "deploy": "fly deploy",
     "deploy:full": "npm run build:ui && git add . && git commit -m uibuild && git push",
-    "logs:prod": "fly logs"
+    "logs:prod": "fly logs",
+    "lint": "eslint"
   },
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "@eslint/js": "^9.4.0",
     "@stylistic/eslint-plugin-js": "^2.1.0",
-    "eslint": "^9.4.0",
+    "eslint": "^8.2.0",
+    "eslint-config-airbnb": "^19.0.4",
+    "eslint-plugin-import": "^2.25.3",
+    "eslint-plugin-jsx-a11y": "^6.5.1",
+    "eslint-plugin-react": "^7.28.0",
+    "eslint-plugin-react-hooks": "^4.3.0",
     "globals": "^15.3.0",
     "nodemon": "^3.1.0"
   },

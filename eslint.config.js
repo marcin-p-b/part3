@@ -1,25 +1,14 @@
 import globals from "globals";
+import pluginJs from "@eslint/js";
 
 export default [
+  { files: ["**/*.js"], languageOptions: { sourceType: "script" } },
+  { languageOptions: { globals: globals.browser } },
+  pluginJs.configs.recommended,
   {
-    languageOptions: { globals: globals.browser },
-    env: {
-      node: true,
+    rules: {
+      "no-unused-vars": "error",
+      "no-undef": "error",
     },
-    overrides: [
-      {
-        env: {
-          node: true,
-        },
-        files: [".eslintrc.{js,cjs}"],
-        parserOptions: {
-          sourceType: "script",
-        },
-      },
-    ],
-    parserOptions: {
-      ecmaVersion: "latest",
-    },
-    rules: {},
   },
 ];

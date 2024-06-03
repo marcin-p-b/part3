@@ -3,7 +3,6 @@ import express, { request } from "express";
 import bodyParser from "body-parser";
 import morgan from "morgan";
 import cors from "cors";
-import assert from "assert";
 import "dotenv/config";
 import Person from "./models/person.js";
 
@@ -20,7 +19,6 @@ app.use(
 );
 
 let personcount = 0;
-let error;
 
 // let persons = [
 //   {
